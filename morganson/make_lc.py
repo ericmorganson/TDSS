@@ -60,5 +60,9 @@ def makeplot(inname="qso_sdss_ps1_shen.fits",n=1):
   plt.savefig(outname)
   plt.clf()
 
+if len(sys.argv) < 3:
+  print "make_lc.py filename rownumber1 rownumber2 ..."
+  exit(1)
+
 for n in np.array(sys.argv[2:]).astype(int):
   makeplot(inname=sys.argv[1],n=n)
